@@ -28,12 +28,12 @@ body {
 }
 
 #boxes .nums {
-  background-color: red;
+  background-color: #1a1a1a;
   padding: 35px;
   border: 1px solid black;
   font-size: 40px;
   font-weight: bold;
-  color: red;
+  color: green;
   border-radius: 10px;
   opacity: 0;
 }
@@ -67,12 +67,12 @@ body {
 }
 
 #boxes .nums:active {
-  background-color: blue;
-  color: blue;
+  background-color: black;
+  color: black;
 }
 
 #startButton {
-  width: 70px;
+  width: 100px;
   height: 50px;
   font-size: 20px;
   top: 100px;
@@ -88,6 +88,14 @@ body {
   opacity: 0;
   user-select: none;
   z-index: -1;
+}
+
+#head {
+  font-size: 120px;
+}
+
+#choosemode {
+  font-size: 60px;
 }
 
 @media screen and (max-width: 950px) {

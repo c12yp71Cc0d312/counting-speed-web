@@ -168,7 +168,7 @@ function clicker() {
         this.textContent = initialNum + numOfBoxes;
       } else {
         this.textContent = "99";
-        this.style.color = "red";
+        this.style.color = "#1a1a1a";
       }
       if(currentNumber == 39 && initialNum == 40) {
         completedSound.play();
@@ -194,6 +194,9 @@ start.onclick = function() {
     countdownTimer = setInterval(updateTimer, 1000);
     cd.style.opacity = "1";
   }
+  else if(start.textContent.localeCompare("Restart") == 0) {
+    location.reload();
+  }
 }
 
 var cd = document.getElementById("countdown");
@@ -218,10 +221,10 @@ var startScoreTimer = function() {
   gameState = true;
   scoreTimer = setInterval(updateScoreTimer, 4);
   for (let i = 0, len = gridNumbers.length; i < len; i++) {
-    gridNumbers[i].style.color = "black";
+    gridNumbers[i].style.color = "green";
     gridNumbers[i].style.opacity = "1";
   }
-
+  start.textContent = "Restart";
 }
 
 var ms = 0,

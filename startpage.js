@@ -2,6 +2,7 @@ var mode = document.getElementById('mode');
 
 var numOfBoxes = 0;
 
+
 function mbclick() {
 
   localStorage.setItem("numofboxes", 16)
