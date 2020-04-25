@@ -4,9 +4,12 @@ scoreboard = document.querySelectorAll('.scoreBoard');
 var modeButton = document.getElementById('modeButton');
 var numOfBoxes = parseInt(localStorage.getItem("numofboxes"));
 var boxlayout = document.getElementById('boxes');
+var gamesound = new Audio();
+gamesound.src = "sounds/entergame.mp3";
 //topScores.clear();
 
 (function() {
+  gamesound.play();
   noboxes();
   loadNums();
   loadGrid();
@@ -147,8 +150,13 @@ for (let i = 0, len = gridNumbers.length; i < len; i++)
 var currentNumber = 0;
 
 var numClickSound = new Audio();
+var gameOverSound = new Audio();
+var completedSound = new Audio();
+var timerSound = new Audio();
 numClickSound.src = "sounds/numbertap.wav";
-
+gameOverSound.src = "sounds/gameover.wav";
+completedSound.src = "sounds/completed.mp3";
+timerSound.src = "sounds/321go.mp3";
 
 
 function clicker() {
@@ -163,10 +171,12 @@ function clicker() {
         this.style.color = "red";
       }
       if(currentNumber == 39 && initialNum == 40) {
+        completedSound.play();
         completed();
       }
       currentNumber++;
     } else if (initialNum != 99) {
+      gameOverSound.play();
       gameOver();
     }
   }
@@ -180,6 +190,7 @@ var start = document.getElementById('startButton');
 start.onclick = function() {
   if (startState == false) {
     startState = true;
+    timerSound.play();
     countdownTimer = setInterval(updateTimer, 1000);
     cd.style.opacity = "1";
   }
