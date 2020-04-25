@@ -63,6 +63,7 @@ body {
   position: absolute;
   right: 100px;
   top: 180px;
+  font-size: 20px;
 }
 
 #boxes .nums:active {
@@ -87,4 +88,12 @@ body {
   opacity: 0;
   user-select: none;
   z-index: -1;
+}
+
+@media screen and (max-width: 950px) {
+  .toptimes {
+    position: static;
+    display: block;
+    text-align: center;
+  }
 }
