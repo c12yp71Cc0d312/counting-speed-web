@@ -64,6 +64,8 @@ function loadGrid() {
         for(let i = 0; i < gridNumbers.length; i ++) {
           gridNumbers[i].style.padding = "30px";
           gridNumbers[i].style.fontSize = "30px";
+          let j = (120 - parseInt(gridNumbers[i].textContent) * 3);
+          gridNumbers[i].style.backgroundColor = "rgb(" + j + "," + j + "," + j + ")";
         }
     }
 
@@ -73,6 +75,8 @@ function loadGrid() {
       for(let i = 0; i < gridNumbers.length; i ++) {
         gridNumbers[i].style.padding = "20px";
         gridNumbers[i].style.fontSize = "30px";
+        let j = (120 - parseInt(gridNumbers[i].textContent) * 3);
+        gridNumbers[i].style.backgroundColor = "rgb(" + j + "," + j + "," + j + ")";
       }
     }
 
@@ -82,8 +86,11 @@ function loadGrid() {
       for(let i = 0; i < gridNumbers.length; i ++) {
         gridNumbers[i].style.padding = "35px";
         gridNumbers[i].style.fontSize = "40px";
+        let j = (120 - parseInt(gridNumbers[i].textContent) * 3);
+        gridNumbers[i].style.backgroundColor = "rgb(" + j + "," + j + "," + j + ")";
       }
     }
+
 }
 
 
@@ -166,9 +173,11 @@ function clicker() {
       numClickSound.play();
       if (initialNum < (40 - numOfBoxes + 1) ) {
         this.textContent = initialNum + numOfBoxes;
+        let j = (120 - parseInt(this.textContent) * 3);
+        this.style.backgroundColor = "rgb(" + j + "," + j + "," + j + ")";
       } else {
         this.textContent = "99";
-        this.style.color = "#1a1a1a";
+        this.style.color = this.style.backgroundColor;
       }
       if(currentNumber == 39 && initialNum == 40) {
         completedSound.play();
@@ -221,7 +230,7 @@ var startScoreTimer = function() {
   gameState = true;
   scoreTimer = setInterval(updateScoreTimer, 4);
   for (let i = 0, len = gridNumbers.length; i < len; i++) {
-    gridNumbers[i].style.color = "green";
+    gridNumbers[i].style.color = "white";
     gridNumbers[i].style.opacity = "1";
   }
   start.textContent = "Restart";

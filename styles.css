@@ -33,7 +33,7 @@ body {
   border: 1px solid black;
   font-size: 40px;
   font-weight: bold;
-  color: green;
+  color: white;
   border-radius: 10px;
   opacity: 0;
 }
@@ -50,9 +50,9 @@ body {
 
 #countdown {
   opacity: 0;
-  font-size: 150px;
+  font-size: 200px;
   position: absolute;
-  top: 315px;
+  top: 290px;
   display: inline-block;
   user-select: none;
 }
